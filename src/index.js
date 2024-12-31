@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './app';
 
 // this file is the entry point for the app
 // it renders the App component to the root element
