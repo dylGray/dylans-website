@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  let text = 'Welcome - check out my work below.';
+  let text = 'Thanks for stopping by! Check out my work below.';
 
   const typingEffect = (text) => {
     const textArray = text.split('');
@@ -57,16 +57,16 @@ function App() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="border rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+              className="border rounded-lg shadow-lg bg-gray-800 overflow-hidden"
             >
               <button
                 onClick={() => toggleDropdown(index)}
-                className="w-full flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-200"
+                className="w-full flex justify-between items-center p-4 bg-gray-700 hover:bg-gray-600 transition duration-200"
               >
-                <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">{project.title}</span>
+                <span className="text-lg font-semibold text-gray-100">{project.title}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`w-5 h-5 text-gray-900 dark:text-gray-100 transition-transform duration-200 ${
+                  className={`w-5 h-5 text-gray-100 transition-transform duration-200 ${
                     activeIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -82,14 +82,14 @@ function App() {
                 </svg>
               </button>
               {activeIndex === index && (
-                <div className="p-4 bg-gray-50 dark:bg-gray-700">
-                  <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
+                <div className="p-4 bg-gray-700">
+                  <p className="text-gray-300">{project.description}</p>
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-block text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 transition duration-200"
+                      className="mt-2 inline-block text-blue-300 hover:text-blue-500 transition duration-200"
                     >
                       View Project
                     </a>
@@ -106,10 +106,10 @@ function App() {
   console.log('App component rendered');
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
       <Header />
       <main className="p-4">
-        <p id="welcome-text" className="text-center text-lg font-semibold mb-6"></p>
+        <p id="welcome-text" className="text-center text-xl font-semibold mb-6"></p>
         <ProjectDropdown projects={projects} />
       </main>
       <Footer />
