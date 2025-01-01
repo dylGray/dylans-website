@@ -1,0 +1,29 @@
+/* theme selector styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+  button {
+    padding: 15px;
+    margin: 10px;
+    background-color: #000;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+}
+  
+span {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 26px
+}
