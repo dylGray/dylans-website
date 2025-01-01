@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ProjectDropdown from './components/ProjectDropdown';
 
 function App() {
-  let text = 'Thanks for stopping by! Check out my work below.';
+  let text = 'Welcome!';
 
   const typingEffect = (text) => {
     const textArray = text.split('');
@@ -13,7 +14,12 @@ function App() {
       textArray.forEach((letter, i) => {
         setTimeout(() => {
           welcomeTextElement.innerHTML += letter;
-        }, 100 * i);
+          if (i === textArray.length - 1) {
+            setTimeout(() => {
+              welcomeTextElement.innerHTML += ' <span class="wave">👋</span>';
+            }, 75);
+          }
+        }, 75 * i); // Speed up the typing effect by reducing the delay
       });
     }
   };
@@ -21,6 +27,50 @@ function App() {
   useEffect(() => {
     typingEffect(text);
     text = '';
+
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    const handleThemeToggle = () => {
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // if set via local storage previously
+      if (localStorage.getItem('color-theme')) {
+          if (localStorage.getItem('color-theme') === 'light') {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          }
+      // if NOT set via local storage previously
+      } else {
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      }
+    };
+
+    themeToggleBtn.addEventListener('click', handleThemeToggle);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      themeToggleBtn.removeEventListener('click', handleThemeToggle);
+    };
   }, []);
 
   const projects = [
@@ -44,71 +94,12 @@ function App() {
     },
   ];
 
-  const ProjectDropdown = ({ projects }) => {
-    const [activeIndex, setActiveIndex] = useState(null);
-
-    const toggleDropdown = (index) => {
-      setActiveIndex(activeIndex === index ? null : index);
-    };
-
-    return (
-      <div className="max-w-4xl mx-auto mt-10 p-4">
-        <div className="space-y-4">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="border rounded-lg shadow-lg bg-gray-800 overflow-hidden"
-            >
-              <button
-                onClick={() => toggleDropdown(index)}
-                className="w-full flex justify-between items-center p-4 bg-gray-700 hover:bg-gray-600 transition duration-200"
-              >
-                <span className="text-lg font-semibold text-gray-100">{project.title}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`w-5 h-5 text-gray-100 transition-transform duration-200 ${
-                    activeIndex === index ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {activeIndex === index && (
-                <div className="p-4 bg-gray-700">
-                  <p className="text-gray-300">{project.description}</p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-2 inline-block text-blue-300 hover:text-blue-500 transition duration-200"
-                    >
-                      View Project
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
   console.log('App component rendered');
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
-      <main className="p-4">
+      <main className="flex-grow p-4">
         <p id="welcome-text" className="text-center text-xl font-semibold mb-6"></p>
         <ProjectDropdown projects={projects} />
       </main>
