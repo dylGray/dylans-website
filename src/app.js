@@ -4,6 +4,21 @@ import Footer from './components/Footer';
 import ProjectDropdown from './components/ProjectDropdown';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
   let text = 'Welcome!';
 
   const typingEffect = (text) => {
@@ -19,7 +34,7 @@ function App() {
               welcomeTextElement.innerHTML += ' <span class="wave">👋</span>';
             }, 75);
           }
-        }, 75 * i); // Speed up the typing effect by reducing the delay
+        }, 75 * i); 
       });
     }
   };
@@ -93,9 +108,28 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
-      <main className="flex-grow p-4">
-        <p id="welcome-text" className="text-center text-2xl font-semibold mb-6"></p>
-        <ProjectDropdown projects={projects} />
+      <main className="flex-grow p-4 flex flex-col items-center">
+        <img 
+          src="/images/dylan-and-jillian.jpg" 
+          className="rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover mb-4" 
+        />
+        <p 
+          id="welcome-text" 
+          className={`text-center text-2xl md:text-3xl font-semibold mt-3 ${!isMobile ? '' : '-mb-6'}`}
+        ></p>
+        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl">
+          <h2 className="text-xl md:text-2xl mb-4 font-semibold">A little about me...</h2>
+          <p className="text-sm md:text-base font-light">
+            Hi, I'm Dylan! I'm currently in my senior year at Indiana University Bloomington, pursuing a degree in Informatics. In the informatics program, I'm focusing my studies on Web Development and Ethical Computing.
+          </p>
+          <p className="mt-3 text-sm md:text-base font-light">
+            Post graduation, I will be joining Revenue Path Group as a software developer and consultant.
+          </p>
+        </section>
+        <hr className="my-2 border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
+        <div className="w-full max-w-2xl px-4">
+          <ProjectDropdown projects={projects} />
+        </div>
       </main>
       <Footer />
     </div>
