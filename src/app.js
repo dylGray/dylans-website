@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectDropdown from './components/ProjectDropdown';
+import ContactForm from './components/ContactForm';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,7 +20,7 @@ function App() {
     };
   }, []);
 
-  let text = 'Welcome!';
+  let text = 'Hey - I\'m Dylan!';
 
   const typingEffect = (text) => {
     const textArray = text.split('');
@@ -109,26 +110,32 @@ function App() {
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
       <main className="flex-grow p-4 flex flex-col items-center">
-        <img 
-          src="/images/dylan-and-jillian.jpg" 
-          className="rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover mb-4" 
-        />
-        <p 
-          id="welcome-text" 
-          className={`text-center text-2xl md:text-3xl font-semibold mt-3 ${!isMobile ? '' : '-mb-6'}`}
-        ></p>
+        <div className="text-left w-full max-w-xl">
+          <img 
+            src="/images/dylan-and-jillian.jpg" 
+            className="rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover mb-4" 
+          />
+          <p 
+            id="welcome-text" 
+            className={`text-2xl md:text-3xl font-semibold mt-3 ${!isMobile ? 'mb-2' : '-mb-2'}`}
+          ></p>
+        </div>
         <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl">
           <h2 className="text-xl md:text-2xl mb-4 font-semibold">A little about me...</h2>
           <p className="text-sm md:text-base font-light">
-            Hi, I'm Dylan! I'm currently in my senior year at Indiana University Bloomington, pursuing a degree in Informatics. In the informatics program, I'm focusing my studies on Web Development and Ethical Computing.
+            I'm currently in my senior year at <strong>Indiana University Bloomington</strong>, pursuing a degree in Informatics. In the informatics program, I'm focusing my studies on <strong>Web Development</strong> and <strong>Ethical Computing</strong>.
           </p>
           <p className="mt-3 text-sm md:text-base font-light">
-            Post graduation, I will be joining Revenue Path Group as a software developer and consultant.
+            Post graduation, I will be joining <strong>Revenue Path Group</strong> as a software developer and consultant.
           </p>
         </section>
         <hr className="my-2 border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
         <div className="w-full max-w-2xl px-4">
           <ProjectDropdown projects={projects} />
+        </div>
+
+        <div className="w-full max-w-2xl px-4">
+          <ContactForm />
         </div>
       </main>
       <Footer />

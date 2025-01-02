@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Code } from 'lucide-react'; 
+import { Globe } from 'lucide-react';
 
 const projects = [
   {
     name: "Full Stack Web App",
-    description: "Developed during the core informatics course 'Information Infrastructure II,' this project involved designing, developing, and deploying a full-stack web application. Leveraged Python with Flask for the backend, MariaDB + SQL for the database, and incorporated version control tools like Git and GitHub on Ubuntu.",
+    description: "Designed and deployed a full-stack web application for the i211 course, featuring a Python Flask backend and MariaDB database.",
+    link: "https://cgi.luddy.indiana.edu/~graydc/i211_project/index.cgi/",
     badges: [
       { label: "Python", color: "3776AB", logo: "python" },
       { label: "Flask", color: "000000", logo: "flask" },
@@ -14,7 +15,8 @@ const projects = [
   },
   {
     name: "Priority Media Group Website",
-    description: "Designed, developed, and deployed an internal project for Revenue Path Group (RPG). This website advertises The Priority Media Group and The Priority Sale Agent program. Used Figma for wireframes and WordPress for development, integrating custom HTML, CSS, JavaScript, and web frameworks for a user-friendly site.",
+    description: "Created a WordPress site for RPG to promote The Priority Media Group and its agent program, focusing on design and usability.",
+    link: "https://theprioritymediagroup.com/",
     badges: [
       { label: "WordPress", color: "21759B", logo: "wordpress" },
       { label: "HTML", color: "E34F26", logo: "html5" },
@@ -24,7 +26,7 @@ const projects = [
   },
   {
     name: "TeamLink: Capstone Project",
-    description: "An ongoing senior capstone project for i494/i495, focused on designing, developing, and deploying a data-driven application. Utilizes HTML, TailwindCSS, JavaScript, PHP, and MariaDB for the backend to create a platform facilitating team collaboration.",
+    description: "Senior capstone project focused on developing a data-driven application, with contributions to front-end development and API integration.",
     badges: [
       { label: "HTML", color: "E34F26", logo: "html5" },
       { label: "TailwindCSS", color: "06B6D4", logo: "tailwindcss" },
@@ -35,7 +37,7 @@ const projects = [
   },
   {
     name: "Navi: AI Sales Assistant",
-    description: "As part of the development team, I contribute to designing and building front-end functionality for this ongoing project. Using TypeScript, React, and TailwindCSS, I am honing my skills in popular front-end languages and frameworks to deliver a seamless user experience.",
+    description: "Developing Navi, an AI sales assistant, with a focus on refactoring the front-end codebase and implementing new features.",
     badges: [
       { label: "TypeScript", color: "3178C6", logo: "typescript" },
       { label: "React", color: "61DAFB", logo: "react" },
@@ -73,9 +75,9 @@ const ProjectDropdown = () => {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <div className="space-y-4">
-        <h2 className="text-xl md:text-2xl mb-4 mt-8 flex items-center font-semibold">
+        <h2 className={`text-xl md:text-2xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
           Past, present, and future web projects.
-          {!isMobile && <Code size={24} className="ml-2" />}
+          {!isMobile && <Globe size={24} className="ml-2" />}
         </h2>
         {projects.map((project, index) => (
           <div key={index} className="overflow-hidden">
@@ -108,7 +110,7 @@ const ProjectDropdown = () => {
               style={{ overflow: 'hidden' }}
             >
               <div className="p-4">
-                <p className="text-xs md:text-base text-gray-900 dark:text-gray-300 mb-5">{project.description}</p>
+                <p className="text-md md:text-base text-gray-900 dark:text-gray-300 mb-5">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {project.badges.map((badge, index) => (
                     <img
@@ -118,13 +120,47 @@ const ProjectDropdown = () => {
                     />
                   ))}
                 </div>
-                {project.link && (
+                {index < 2 && project.link ? (
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block text-sm md:text-base text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 transition duration-200"
-                  >View Project</a>
+                    className="mt-2 inline-flex items-center text-sm md:text-base text-blue-500 dark:text-blue-300 hover:underline transition duration-200"
+                  >
+                    View Project
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                ) : (
+                  <div className="mt-2 inline-flex items-center text-sm md:text-base text-gray-500 dark:text-gray-400">
+                    Working on it...
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
                 )}
               </div>
             </div>
