@@ -1,6 +1,30 @@
 import React, { useState } from 'react';
 
-const ProjectDropdown = ({ projects }) => {
+const projects = [
+  {
+    name: "Full Stack Web App",
+    description: "Built with Python, Flask, Bootstrap, and MariaDB for the backend.",
+    badges: [
+      { label: "Python", color: "3776AB", logo: "python" },
+      { label: "Flask", color: "000000", logo: "flask" },
+      { label: "Bootstrap", color: "563D7C", logo: "bootstrap" },
+      { label: "MariaDB", color: "003545", logo: "mariadb" }
+    ]
+  },
+  {
+    name: "Priority Media Group Website",
+    description: "Built with WordPress, custom HTML and Bootstrap, and utilized GoDaddy for DNS management.",
+    badges: [
+      { label: "WordPress", color: "21759B", logo: "wordpress" },
+      { label: "HTML", color: "E34F26", logo: "html5" },
+      { label: "Bootstrap", color: "563D7C", logo: "bootstrap" },
+      { label: "GoDaddy", color: "1B1B1B", logo: "godaddy" }
+    ]
+  },
+  // ...existing projects...
+];
+
+const ProjectDropdown = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleDropdown = (index) => {
@@ -14,9 +38,9 @@ const ProjectDropdown = ({ projects }) => {
           <div key={index} className="overflow-hidden">
             <button
               onClick={() => toggleDropdown(index)}
-              className="w-full flex justify-between items-center p-4 transition duration-200 focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+              className="w-full flex justify-between items-center p-4 transition duration-200 focus:outline-none text-gray-900 dark:text-white"
             >
-              <span className="text-lg font-semibold">{project.title}</span>
+              <span className="text-lg font-semibold">{project.name}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`w-5 h-5 transition-transform duration-200 ${
@@ -41,16 +65,23 @@ const ProjectDropdown = ({ projects }) => {
               style={{ overflow: 'hidden' }}
             >
               <div className="p-4">
-                <p className="text-gray-900 dark:text-gray-300">{project.description}</p>
+                <p className="text-gray-900 dark:text-gray-300 mb-5">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {project.badges.map((badge, idx) => (
+                    <img
+                      key={idx}
+                      src={`https://img.shields.io/badge/${badge.label}-${badge.color}?style=for-the-badge&logo=${badge.logo}&logoColor=white`}
+                      alt={`${badge.label} badge`}
+                    />
+                  ))}
+                </div>
                 {project.link && (
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-block text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 transition duration-200"
-                  >
-                    View Project
-                  </a>
+                  >View Project</a>
                 )}
               </div>
             </div>

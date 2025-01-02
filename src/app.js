@@ -75,22 +75,16 @@ function App() {
 
   const projects = [
     {
-      title: 'Personal Portfolio Website',
+      title: 'Full-Stack Web Application',
       description:
-        'A personal website showcasing my skills, projects, and contact information. Built with React and Tailwind CSS.',
+        'This is a web application I developed during my core informatics class, Information Infrastructure II. In this course, I learned to design, develop, and deploy a full-stack web application. ',
       link: 'https://example.com/portfolio',
     },
     {
-      title: 'E-commerce Store',
+      title: 'Priority Media Group Website',
       description:
-        'An online store with dynamic product listings and a shopping cart. Features Stripe for payment processing.',
+        'Designed, developed, and deployed an internal project for Revenue Path Group (RPG). This website is designed around advertising The Priority Media Group and The Priority Sale Agent program.',
       link: 'https://example.com/store',
-    },
-    {
-      title: 'Blog Platform',
-      description:
-        'A blogging platform where users can write and share posts. Includes a user authentication system.',
-      link: 'https://example.com/blog',
     },
   ];
 
@@ -100,7 +94,7 @@ function App() {
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
       <main className="flex-grow p-4">
-        <p id="welcome-text" className="text-center text-xl font-semibold mb-6"></p>
+        <p id="welcome-text" className="text-center text-2xl font-semibold mb-6"></p>
         <ProjectDropdown projects={projects} />
       </main>
       <Footer />
