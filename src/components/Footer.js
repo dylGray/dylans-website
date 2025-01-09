@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   console.log('Footer component rendered');
   return (
-    <footer className="bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow mt-auto mb-2 mr-2 ml-2">
+    <footer style={{ marginTop:"100px" }} className="bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow mt-auto mb-2 mr-2 ml-2">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="/index.html" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">

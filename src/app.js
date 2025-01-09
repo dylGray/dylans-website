@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectDropdown from './components/ProjectDropdown';
-import ContactForm from './components/ContactForm';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -89,21 +88,6 @@ function App() {
     };
   }, []);
 
-  const projects = [
-    {
-      title: 'Full-Stack Web Application',
-      description:
-        'This is a web application I developed during my core informatics class, Information Infrastructure II. In this course, I learned to design, develop, and deploy a full-stack web application. ',
-      link: 'https://example.com/portfolio',
-    },
-    {
-      title: 'Priority Media Group Website',
-      description:
-        'Designed, developed, and deployed an internal project for Revenue Path Group (RPG). This website is designed around advertising The Priority Media Group and The Priority Sale Agent program.',
-      link: 'https://example.com/store',
-    },
-  ];
-
   console.log('App component rendered');
 
   return (
@@ -131,13 +115,10 @@ function App() {
         </section>
         <hr className="my-2 border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
         <div className="w-full max-w-2xl px-4">
-          <ProjectDropdown projects={projects} />
-        </div>
-
-        <div className="w-full max-w-2xl px-4">
-          <ContactForm />
+          <ProjectDropdown />
         </div>
       </main>
+
       <Footer />
     </div>
   );
