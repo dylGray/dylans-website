@@ -101,7 +101,7 @@ function App() {
         <div className={`w-full max-w-xl ${isMobile ? 'flex flex-col items-center' : 'flex items-center'}`}>
           <img 
             src="/images/dylan-and-jillian.jpg" 
-            className={`rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover ${isMobile ? 'mb-4 mt-8' : 'mr-4'}`} 
+            className={`rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover ${isMobile ? 'mb-4 mt-4' : 'mr-4'}`} 
             loading="lazy"
           />
           <p 
