@@ -47,6 +47,12 @@ function App() {
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     const themeToggleBtn = document.getElementById('theme-toggle');
 
+    // Ensure dark mode is the default theme
+    if (!localStorage.getItem('color-theme')) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    }
+
     // Change the icons inside the button based on previous settings
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         themeToggleLightIcon.classList.remove('hidden');
@@ -94,10 +100,10 @@ function App() {
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Header />
       <main className="flex-grow p-4 flex flex-col items-center">
-        <div className="text-left w-full max-w-xl">
+        <div className="flex flex-col md:flex-row items-center text-left w-full max-w-xl">
           <img 
             src="/images/dylan-and-jillian.jpg" 
-            className="rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover mb-4" 
+            className="rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover mb-4 md:mb-0 md:mr-4" 
           />
           <p 
             id="welcome-text" 
