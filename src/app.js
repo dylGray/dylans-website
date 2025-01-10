@@ -86,7 +86,6 @@ function App() {
 
     themeToggleBtn.addEventListener('click', handleThemeToggle);
 
-    // Cleanup event listener on component unmount
     return () => {
       themeToggleBtn.removeEventListener('click', handleThemeToggle);
     };
@@ -103,10 +102,11 @@ function App() {
           <img 
             src="/images/dylan-and-jillian.jpg" 
             className={`rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover ${isMobile ? 'mb-4 mt-8' : 'mr-4'}`} 
+            loading="lazy"
           />
           <p 
             id="welcome-text" 
-            className={`text-2xl md:text-3xl font-semibold ${isMobile ? 'mt-3 text-center' : 'mt-0 text-right'}`}
+            className={`text-2xl md:text-3xl font-semibold ${isMobile ? 'mt-3 text-center' : 'mt-0 ml-5 text-right'}`}
           ></p>
         </div>
 
