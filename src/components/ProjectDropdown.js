@@ -73,13 +73,13 @@ const ProjectDropdown = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-5 mt-5">
+    <div className="max-w-4xl mx-auto p-4 mt-16">
       <div className="space-y-4">
         <h2 className={`text-xl md:text-2xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
           Past, present, and future web projects.
           {!isMobile && <Globe size={24} className="ml-2" />}
         </h2>
-        <p className="md:text-xs">These are web-based projects I've completed during my time at IU, and throughout journey as an incoming Developer at RPG.</p>
+        <p className="text-xs md:text-base mb-4">These are web-based projects I've completed during my time at IU, and throughout my journey as an incoming Developer at RPG.</p>
         {projects.map((project, index) => (
           <div key={index} className="overflow-hidden">
             <button
