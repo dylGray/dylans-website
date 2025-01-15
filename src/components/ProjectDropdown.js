@@ -79,7 +79,7 @@ const ProjectDropdown = () => {
           Past, present, and future web projects.
           {!isMobile && <Globe size={24} className="ml-2" />}
         </h2>
-        <p>These are web-based projects I've completed during my time at IU, and throughout journey as an incoming Developer at RPG.</p>
+        <p className="md:text-sm">These are web-based projects I've completed during my time at IU, and throughout journey as an incoming Developer at RPG.</p>
         {projects.map((project, index) => (
           <div key={index} className="overflow-hidden">
             <button
