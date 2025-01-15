@@ -28,10 +28,13 @@ function Footer() {
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-400 sm:mb-0">
             <li>
-              <a href="https://github.com/dylGray" className="hover:underline me-4 md:me-6" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/dylan-gray-255107217/" className="hover:underline me-4 md:me-6" target="_blank">LinkedIn</a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/dylan-gray-255107217/" className="hover:underline me-4 md:me-6" target="_blank">LinkedIn</a>
+              <a href="#" className="hover:underline me-4 md:me-6" target="_blank">Email</a>
+            </li>
+            <li>
+              <a href="https://github.com/dylGray" className="hover:underline me-4 md:me-6" target="_blank">GitHub</a>
             </li>
             <li>
               <a href="https://www.aspca.org/ways-to-give" className="hover:underline me-4 md:me-6" target="_blank">Donate to ASPCA</a>

@@ -104,10 +104,12 @@ function App() {
             className={`rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover ${isMobile ? 'mb-4 mt-6' : 'mr-4'}`} 
             loading="lazy"
           />
-          <p 
-            id="welcome-text" 
-            className={`text-2xl md:text-3xl font-semibold leading-relaxed ${isMobile ? 'mt-3 text-center' : 'mt-0 ml-5 text-right'}`}
-          ></p>
+          <div className="flex flex-col items-center">
+            <p 
+              id="welcome-text" 
+              className={`text-2xl md:text-3xl font-semibold leading-relaxed ${isMobile ? 'mt-3 text-center' : 'mt-0 ml-5 text-right'}`}
+            ></p>
+          </div>
         </div>
 
         <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-5 pl-5 ">
