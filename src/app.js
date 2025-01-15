@@ -32,9 +32,9 @@ function App() {
           if (i === textArray.length - 1) {
             setTimeout(() => {
               welcomeTextElement.innerHTML += ' <span class="wave">👋</span>';
-            }, 130);
+            }, 100);
           }
-        }, 130 * i); 
+        }, 100 * i); 
       });
     }
   };
