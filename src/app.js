@@ -106,16 +106,16 @@ function App() {
           />
           <p 
             id="welcome-text" 
-            className={`text-2xl md:text-3xl font-semibold ${isMobile ? 'mt-3 text-center' : 'mt-0 ml-5 text-right'}`}
+            className={`text-2xl md:text-3xl font-semibold leading-relaxed ${isMobile ? 'mt-3 text-center' : 'mt-0 ml-5 text-right'}`}
           ></p>
         </div>
 
-        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl">
-          <h2 className="text-xl md:text-2xl mb-4 font-semibold">A little about me...</h2>
-          <p className="text-sm md:text-base font-light">
+        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-5 pl-5 ">
+          <h2 className="text-xl md:text-3xl mb-4 font-semibold">A little about me...</h2>
+          <p className="text-md md:text-lg font-light leading-relaxed">
             I'm currently in my senior year at <strong>Indiana University Bloomington</strong>, pursuing a degree in Informatics. In the Informatics program, I'm focusing my studies on <strong>Web Development</strong> and <strong>Human-Centered Computing</strong>.
           </p>
-          <p className="mt-3 text-sm md:text-base font-light">
+          <p className="mt-3 text-md md:text-lg font-light leading-relaxed">
             Post graduation, I will be joining <strong>Revenue Path Group</strong> as the <strong>Director of Product Development & Engineering</strong>. I'm excited to be working with developers and clients to create innovative solutions that drive business growth.
           </p>
         </section>
