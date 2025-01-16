@@ -41,7 +41,7 @@ const Courses = () => {
                         />
                         <div className="flex-1 text-left">
                             <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{course.title}</h3>
-                            <p className="text-xs md:text-md text-gray-300">{course.description}</p>
+                            <p className="text-xs md:text-lg text-gray-300">{course.description}</p>
                         </div>
                     </div>
                 ))}
