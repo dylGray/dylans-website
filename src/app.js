@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProjectDropdown from './components/ProjectDropdown';
+import Courses from './components/Courses';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -122,6 +123,7 @@ function App() {
           </p>
         </section>
         <hr className="my-2 border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
+        <Courses />
         <div className="w-full max-w-2xl px-4">
           <ProjectDropdown />
         </div>
