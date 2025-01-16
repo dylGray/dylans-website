@@ -1,4 +1,5 @@
 import React from 'react';
+import { BookOpen } from 'lucide-react';
 
 const courses = [
     { 
@@ -24,7 +25,10 @@ const courses = [
 const Courses = () => {
     return (
         <div className="mt-20">
-            <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">Relevant coursework at IU.</h2>
+            <div className="flex justify-center items-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-semibold text-center mr-2">Relevant coursework at IU.</h2>
+                <BookOpen className="w-6 h-6 text-white hidden md:block" />
+            </div>
 
             {/* Centered container for consistent width */}
             <div className="max-w-4xl mx-auto">
