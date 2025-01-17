@@ -9,19 +9,19 @@ const courses = [
     { 
         id: 1, 
         title: 'Information Infrastructure I and II', 
-        description: 'The core intro to programming courses as an Informatics major, I210 and I211. I currently TA for I210, where we learn the fundementals of Python programming. I211 is where we put all the pieces together and build + deploy a full-stack web-based application.', 
+        description: 'Core intro programming courses (I210/I211) for Informatics majors. I TA for I210, teaching Python fundamentals. I211 focuses on building and deploying full-stack web apps.', 
         image: './images/python-logo.png' 
     },
     { 
         id: 2, 
         title: 'Programming in JavaScript', 
-        description: 'The course for those pursuing a Web Development minor, I365 teaches you the fundementals of web-based programming. From this course, you gain a good understandind of making dynamic, accessible, and responsive web interfaces.', 
+        description: 'A Web Development minor course (I365) covering the fundamentals of web programming, including creating dynamic, accessible, and responsive web interfaces.', 
         image: './images/javascript.png' 
     },
     { 
         id: 3, 
         title: 'Application Development', 
-        description: 'An Informatics elective that most students take who are interested in learning new programming langauges. I311 gives students a good understanding of OOP, version control tools, and working with others in a development environment.', 
+        description: 'An Informatics elective (I311) teaching OOP, version control tools, and collaboration in development environments, ideal for learning new programming languages.', 
         image: './images/java.webp' 
     },
 ];
@@ -49,8 +49,7 @@ const Courses = () => {
     return (
         <div style={{ marginTop: isMobile ? '100px' : '200px' }}>
             <div className="flex mb-8">
-                <h2 className="text-2xl md:text-3xl font-semibold text-left mr-2">Relevant coursework at IU.</h2>
-                <BookOpen className="w-6 h-6 mt-2 text-white hidden md:block" />
+                <h2 className="text-xl md:text-4xl font-semibold text-left mr-2">Some of my favorite courses!</h2>
             </div>
 
             {/* Centered container for consistent width */}

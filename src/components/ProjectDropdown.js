@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
 
 const projects = [
   {
@@ -73,11 +72,10 @@ const ProjectDropdown = () => {
   };
 
   return (
-    <div className=" mx-auto p-4 mt-36">
+    <div className="mx-auto mt-24">
       <div className="space-y-4">
-        <h2 className={`text-xl md:text-2xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
+        <h2 className={`text-xl md:text-4xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
           Past, present, and future web projects.
-          {!isMobile && <Globe size={24} className="ml-2" />}
         </h2>
         <p className="text-sm md:text-xl mb-4">These are web-based projects I've completed during my time at IU, and throughout my journey as an incoming Developer at RPG.</p>
         {projects.map((project, index) => (
