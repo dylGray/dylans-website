@@ -113,16 +113,16 @@ function App() {
           </div>
         </div>
 
-        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-5 pl-5 ">
-          <h2 className="text-xl md:text-3xl mb-4 font-semibold">A little about me...</h2>
-          <p className="text-md md:text-lg font-light leading-relaxed">
+        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-2 pl-2 ">
+          <h2 className="text-xl md:text-4xl mb-4 font-semibold">A little about me...</h2>
+          <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light">
             I'm currently in my senior year at <strong>Indiana University Bloomington</strong>, pursuing a degree in Informatics. In the Informatics program, I'm focusing my studies on <strong>Web Development</strong> and <strong>Human-Centered Computing</strong>.
           </p>
-          <p className="mt-3 text-md md:text-lg font-light leading-relaxed">
+          <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light mt-3">
             Post graduation, I will be joining <strong>Revenue Path Group</strong> as the <strong>Director of Product Development & Engineering</strong>. I'm excited to be working with developers and clients to create innovative solutions that drive business growth.
           </p>
         </section>
-        <hr className="my-2 border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
+        <hr style={{ marginTop: isMobile ? '10px': '50px' }} className="border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
         <Courses />
         <div className="w-full max-w-2xl px-4">
           <ProjectDropdown />

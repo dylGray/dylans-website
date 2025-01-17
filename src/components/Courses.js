@@ -1,5 +1,9 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { useState, useEffect } from "react";
+
 
 const courses = [
     { 
@@ -23,19 +27,44 @@ const courses = [
 ];
 
 const Courses = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
-        <div className="mt-20">
-            <div className="flex justify-center items-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-semibold text-center mr-2">Relevant coursework at IU.</h2>
-                <BookOpen className="w-6 h-6 text-white hidden md:block" />
+        <div style={{ marginTop: isMobile ? '100px' : '200px' }}>
+            <div className="flex mb-8">
+                <h2 className="text-2xl md:text-3xl font-semibold text-left mr-2">Relevant coursework at IU.</h2>
+                <BookOpen className="w-6 h-6 mt-2 text-white hidden md:block" />
             </div>
 
             {/* Centered container for consistent width */}
-            <div className="max-w-4xl mx-auto">
-                {courses.map(course => (
-                    <div 
+            <div className="max-w-4xl mx-auto" ref={ref}>
+                {courses.map((course, index) => (
+                    <motion.div 
                         key={course.id} 
                         className="flex items-start space-x-6 p-4 border border-gray-200 rounded-lg shadow-md mb-6 bg-gray-800"
+                        initial={{ opacity: 0, x: 100 }} // Start off-screen
+                        animate={isInView ? { opacity: 1, x: 0 } : {}} // Animate to visible
+                        transition={{ 
+                            duration: 0.8, 
+                            delay: index * 0.3 // Delay based on index
+                        }}
                     >
                         <img 
                             src={course.image} 
@@ -47,7 +76,7 @@ const Courses = () => {
                             <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{course.title}</h3>
                             <p className="text-xs md:text-lg text-gray-300">{course.description}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
