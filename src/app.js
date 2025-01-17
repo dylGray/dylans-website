@@ -116,7 +116,7 @@ function App() {
         <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-2 pl-2 ">
           <h2 className="text-xl md:text-4xl mb-4 font-semibold">A little about me...</h2>
           <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light">
-            I’m a senior at Indiana University pursuing a B.S. in Informatics. Beyond academics, I have a passion for learning about UI/UX design and system design. In my downtime, I enjoy fishing, snowboarding, and staying active at the gym!
+            I’m a senior at Indiana University pursuing a B.S. in Informatics. Beyond academics, I have a passion for learning about UI/UX design and system architecture. In my downtime, I enjoy fishing, snowboarding, and staying active at the gym!
           </p>
           <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light mt-3">
             Post graduation, I will be joining <strong>Revenue Path Group</strong> as the <strong>Director of Product Development & Engineering</strong>. I'm excited to be working with developers and clients to create innovative solutions that drive business growth.
