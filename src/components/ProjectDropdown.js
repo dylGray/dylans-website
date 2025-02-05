@@ -72,7 +72,7 @@ const ProjectDropdown = () => {
   };
 
   return (
-    <div className={`mt-${isMobile ? '24' : '48'}`}>
+    <div className={`mt-${isMobile ? '36' : '48'}`}>
       <div className="space-y-4">
         <h2 className={`text-xl md:text-4xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
           Past, present, and future web projects.
