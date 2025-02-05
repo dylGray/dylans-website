@@ -109,7 +109,7 @@ const ProjectDropdown = () => {
               style={{ overflow: 'hidden' }}
             >
               <div className="p-4">
-                <p className="text-md md:text-base text-gray-900 dark:text-gray-300 mb-5">{project.description}</p>
+                <p className="text-sm md:text-base text-gray-900 dark:text-gray-300 mb-5">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {project.badges.map((badge, index) => (
                     <img
