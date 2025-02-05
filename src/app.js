@@ -33,9 +33,9 @@ function App() {
           if (i === textArray.length - 1) {
             setTimeout(() => {
               welcomeTextElement.innerHTML += ' <span class="wave">👋</span>';
-            }, 100);
+            }, 75);
           }
-        }, 100 * i); 
+        }, 75 * i); 
       });
     }
   };
@@ -113,16 +113,16 @@ function App() {
           </div>
         </div>
 
-        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-xl pr-2 pl-2 ">
+        <section style={{ marginTop:"50px" }} className="about-me text-left mb-6 w-full max-w-4xl pr-2 pl-2 ">
           <h2 className="text-xl md:text-4xl mb-4 font-semibold">A little about me...</h2>
-          <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light">
+          <p style={{ lineHeight: isMobile ? '25px' : '30px' }} className="text-md md:text-xl font-light">
             I’m a senior at Indiana University pursuing a B.S. in Informatics. Beyond academics, I have a passion for learning about UI/UX design and system architecture. In my downtime, I enjoy fishing, snowboarding, and staying active at the gym!
           </p>
-          <p style={{ lineHeight: isMobile ? '20px' : '30px' }} className="text-md md:text-xl font-light mt-3">
+          <p style={{ lineHeight: isMobile ? '25px' : '30px' }} className="text-md md:text-xl font-light mt-3">
             Post graduation, I will be joining <strong>Revenue Path Group</strong> as the <strong>Director of Product Development & Engineering</strong>. I'm excited to be working with developers and clients to create innovative solutions that drive business growth.
           </p>
         </section>
-        <hr style={{ marginTop: isMobile ? '10px': '50px' }} className="border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-2xl" />
+        <hr style={{ marginTop: isMobile ? '10px': '50px' }} className="border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-4xl" />
         <Courses />
         <div className="w-full max-w-2xl px-4">
           <ProjectDropdown />

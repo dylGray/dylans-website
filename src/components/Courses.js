@@ -48,8 +48,9 @@ const Courses = () => {
 
     return (
         <div style={{ marginTop: isMobile ? '100px' : '200px' }}>
-            <div className="flex mb-8">
+            <div className="mb-8">
                 <h2 className="text-xl md:text-4xl font-semibold text-left mr-2">Some of my favorite courses!</h2>
+                <p className={`text-sm md:text-lg ${isMobile ? 'mt-1' : 'mt-3'}`}>These are course I've taken while at Indiana University.</p>
             </div>
 
             {/* Centered container for consistent width */}
