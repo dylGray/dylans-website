@@ -124,7 +124,7 @@ function App() {
         </section>
         <hr style={{ marginTop: isMobile ? '10px': '50px' }} className="border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-4xl" />
         <Courses />
-        <div className="w-full max-w-2xl px-4">
+        <div className="w-full max-w-4xl px-4">
           <ProjectDropdown />
         </div>
       </main>
