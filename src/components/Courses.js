@@ -62,7 +62,7 @@ const Courses = ({ theme }) => {
                         initial={{ opacity: 0, x: 100 }} // Start off-screen
                         animate={isInView ? { opacity: 1, x: 0 } : {}} // Animate to visible
                         transition={{ 
-                            duration: 0.8, 
+                            duration: 0.9, 
                             delay: index * 0.3 // Delay based on index
                         }}
                     >
