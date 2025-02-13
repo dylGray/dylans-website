@@ -74,7 +74,7 @@ const ProjectDropdown = () => {
   return (
     <div className={`mt-${isMobile ? '24' : '48'}`}>
       <div className="space-y-4">
-        <h2 className={`text-xl md:text-4xl mb-4 ${isMobile ? 'mt-8' : 'mt-4'} flex items-center font-semibold`}>
+        <h2 className={`text-xl md:text-4xl ${isMobile ? 'mt-8 mb-2' : 'mt-4 mb-4'} flex items-center font-semibold`}>
           Past, present, and future web projects.
         </h2>
         <p className="text-sm md:text-xl mb-4">These are web-based projects I've completed during my time at IU, and throughout my journey as an incoming Developer at RPG.</p>
