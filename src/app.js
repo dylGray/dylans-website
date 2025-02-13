@@ -99,7 +99,7 @@ function App() {
       <Header />
       <main className="flex-grow p-4 flex flex-col items-center">
 
-        <div className={`w-full max-w-xl ${isMobile ? 'flex flex-col items-center' : 'flex items-center'}`}>
+        <div className={`w-full max-w-xl ${isMobile ? 'flex flex-col items-center' : 'flex items-left'}`}>
           <img 
             src="/images/dylan-and-jillian.jpg" 
             className={`rounded-full border-4 border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 w-48 h-48 object-cover ${isMobile ? 'mb-4 mt-6' : 'mr-4'}`} 
