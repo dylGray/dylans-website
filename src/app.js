@@ -6,6 +6,7 @@ import Courses from './components/Courses';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('color-theme') || 'dark');
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -83,6 +84,7 @@ function App() {
               localStorage.setItem('color-theme', 'dark');
           }
       }
+      setTheme(localStorage.getItem('color-theme'));
     };
 
     themeToggleBtn.addEventListener('click', handleThemeToggle);
@@ -123,7 +125,7 @@ function App() {
           </p>
         </section>
         <hr style={{ marginTop: isMobile ? '10px': '50px' }} className="border-t-2 border-gray-300 dark:border-gray-700 w-full max-w-4xl" />
-        <Courses />
+        <Courses theme={theme} />
         <div className="w-full max-w-4xl px-4">
           <ProjectDropdown />
         </div>

@@ -26,7 +26,7 @@ const courses = [
     },
 ];
 
-const Courses = () => {
+const Courses = ({ theme }) => {
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -58,7 +58,7 @@ const Courses = () => {
                 {courses.map((course, index) => (
                     <motion.div 
                         key={course.id} 
-                        className="flex items-start space-x-6 p-4 border border-gray-200 rounded-lg shadow-md mb-6 bg-gray-800"
+                        className={`flex items-start space-x-6 p-4 border rounded-lg shadow-md mb-6 ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}
                         initial={{ opacity: 0, x: 100 }} // Start off-screen
                         animate={isInView ? { opacity: 1, x: 0 } : {}} // Animate to visible
                         transition={{ 
